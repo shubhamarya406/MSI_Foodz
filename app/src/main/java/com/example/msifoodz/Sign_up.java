@@ -118,6 +118,7 @@ public class Sign_up extends AppCompatActivity {
                                     });
                                     progressDialog.dismiss();
                                     startActivity(new Intent(getApplicationContext(),Login.class));
+                                    finish();
                                 }
                                 else{
                                     Toast.makeText(Sign_up.this,"Error : "+task.getException(),Toast.LENGTH_LONG).show();

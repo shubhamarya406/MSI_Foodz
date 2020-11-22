@@ -30,8 +30,8 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     List<Dashboard_food_category_details> food;
     private DrawerLayout drawer;
     NavigationView navigationView;
-//    FirebaseAuth firebaseAuth;
-//    FirebaseUser firebaseUser;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +116,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
                     Intent intent=new Intent(getApplicationContext(),Login.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 break;
 
