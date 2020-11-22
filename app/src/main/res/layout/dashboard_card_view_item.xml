@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:id="@+id/card_view"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp"
+    cardview:cardCornerRadius="10dp"
+    cardview:cardElevation="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <soup.neumorphism.NeumorphImageView
+            style="@style/ShapeAppearance.Neumorph.ImageView"
+            android:id="@+id/food_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:elevation="@dimen/cardview_default_radius"
+            android:scaleType="centerCrop"
+            android:background="#acc"/>
+        <soup.neumorphism.NeumorphTextView
+            android:id="@+id/food_category"
+            style="@style/Widget.Neumorph.TextView"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Example"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:fontFamily="@font/aladin"
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

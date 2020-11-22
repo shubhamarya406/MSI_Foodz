@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.msifoodz">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/sps"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/sps"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MSIFoodz">
+        <activity android:name=".cart"
+            android:parentActivityName=".Dashboard"/>
+        <activity
+            android:name=".wallet"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".help"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".Profile"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".faq"
+            android:parentActivityName=".Dashboard" />
+        <activity
+            android:name=".Dashboard"
+            android:theme="@style/Theme.MSIFoodz.NoActionBar" />
+        <activity
+            android:name=".Sign_up"
+            android:theme="@style/Theme.MSIFoodz." />
+        <activity
+            android:name=".Login"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

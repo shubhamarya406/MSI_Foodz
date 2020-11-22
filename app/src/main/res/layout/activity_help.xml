@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".help"
+    android:padding="20dp">
+    <soup.neumorphism.NeumorphTextView
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We Are Happy To Help You..."
+        android:textSize="30sp"
+        android:layout_marginBottom="50dp"/>
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/call_id_help"
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CALL US AT :"
+                android:textSize="30sp"
+                android:fontFamily="@font/aladin"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/number_id_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9968247962"
+                android:textSize="30sp"
+                android:textAlignment="center"/>
+            </LinearLayout>
+        </soup.neumorphism.NeumorphCardView>
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/email_id_help"
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_marginTop="20dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EMAIL US AT:"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:fontFamily="@font/aladin"/>
+            <TextView
+                android:id="@+id/mail_id_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="msifoodz@gmail.com"
+                android:textSize="30sp"
+                android:textAlignment="center"/>
+            </LinearLayout>
+        </soup.neumorphism.NeumorphCardView>
+
+
+</LinearLayout>

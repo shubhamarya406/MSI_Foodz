@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile_id"
+            android:icon="@drawable/ic_profile"
+            android:title="PROFILE" />
+        <item
+            android:id="@+id/order_id"
+            android:icon="@drawable/ic_orders"
+            android:title="ORDERS" />
+        <item
+            android:id="@+id/faq_id"
+            android:icon="@drawable/ic_faq"
+            android:title="FAQ" />
+        <item
+            android:id="@+id/help_id"
+            android:icon="@drawable/ic_help"
+            android:title="HELP" />
+    </group>
+    <item android:title="other">
+        <menu >
+            <item android:id="@+id/share_id"
+                android:icon="@drawable/ic_share"
+                android:title="SHARE"/>
+            <item android:id="@+id/logout_id"
+                android:icon="@drawable/sign_out_icon"
+                android:title="LOGOUT"/>
+        </menu>
+    </item>
+
+</menu>

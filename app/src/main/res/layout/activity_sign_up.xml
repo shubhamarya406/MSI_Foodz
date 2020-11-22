@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:context=".Login">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logo_image_login"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/sps"
+            android:transitionName="logo_img"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/greeting_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:text="Welcome MSIan"
+            android:textColor="#000"
+            android:textSize="40sp"
+            android:transitionName="logo_name" />
+
+        <TextView
+            android:id="@+id/sigup_text_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to Continue"
+            android:textSize="18sp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:neumorph_shapeType="basin">
+
+                    <EditText
+                        android:id="@+id/name_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/antic"
+                        android:hint="Name"
+                        android:inputType="textCapWords"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:neumorph_shapeType="basin">
+
+                    <EditText
+                        android:id="@+id/email_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/antic"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:neumorph_shapeType="basin">
+
+                    <EditText
+                        android:id="@+id/phone_number_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/antic"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:neumorph_shapeType="basin">
+
+                    <EditText
+                        android:id="@+id/password_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/antic"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
+
+                </soup.neumorphism.NeumorphCardView>
+
+
+                <soup.neumorphism.NeumorphButton
+                    android:id="@+id/signup_btn_signup"
+                    style="@style/Widget.Neumorph.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center"
+                    android:text="sign up"
+                    android:textAllCaps="true"
+                    app:neumorph_backgroundColor="#EFBA8F"
+                    app:neumorph_shapeType="flat" />
+
+                <soup.neumorphism.NeumorphButton
+                    android:id="@+id/already_user_signup"
+                    style="@style/Widget.Neumorph.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/antic"
+                    android:text="Already Have an Account? Sign In"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    app:neumorph_backgroundColor="@android:color/transparent"
+                    tools:ignore="RtlHardcoded" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "930309931281",
+    "firebase_url": "https://msi-foodz.firebaseio.com",
+    "project_id": "msi-foodz",
+    "storage_bucket": "msi-foodz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930309931281:android:3846eb3fa8e2e5b75a8cb0",
+        "android_client_info": {
+          "package_name": "com.example.msifoodz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930309931281-9ud017b3q4sfugkf2cfuf096k5jfoloi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCsIczBUFe9tHrra5ysQj4AsU620kLrg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930309931281-9ud017b3q4sfugkf2cfuf096k5jfoloi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

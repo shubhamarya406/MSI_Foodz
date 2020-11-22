@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:theme="@style/Theme.MSIFoodz"
+    tools:context=".Login">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/logo_image_login"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sps"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        />
+
+    <TextView
+        android:id="@+id/greeting_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:transitionName="logo_name"
+        android:text="Hello MSIan, Welcome Back !!!"
+        android:textColor="#000"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/sigin_text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in to Continue"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:neumorph_shapeType="basin"
+            >
+
+            <EditText
+                android:id="@+id/username_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/antic"
+                android:hint="Username/Email"
+                android:inputType="textEmailAddress"
+                android:textStyle="bold|italic"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="20sp" />
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:neumorph_shapeType="basin"
+            >
+
+            <EditText
+                android:id="@+id/password_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/antic"
+                android:hint="Password"
+                android:textStyle="bold|italic"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="20sp"
+                android:inputType="textPassword"/>
+        </soup.neumorphism.NeumorphCardView>
+
+        <Button
+            android:id="@+id/forgot_password_login"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:text="Forgot Password?"
+            android:textAllCaps="true" />
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/login_btn_login"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:neumorph_backgroundColor="#56DF6D09"
+            android:text="Login"
+            android:textAllCaps="true"
+            android:gravity="center"
+            app:neumorph_shapeType="flat"
+            />
+<ProgressBar
+    android:id="@+id/progress_bar_login"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="invisible"/>
+        <Button
+            android:id="@+id/new_user_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:elevation="0dp"
+            android:fontFamily="@font/antic"
+            android:text="New User? Sign Up"
+            android:textAllCaps="true"
+            android:textColor="#000" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
