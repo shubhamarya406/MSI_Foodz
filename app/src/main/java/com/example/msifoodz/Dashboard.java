@@ -30,8 +30,6 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     List<Dashboard_food_category_details> food;
     private DrawerLayout drawer;
     NavigationView navigationView;
-    FirebaseAuth firebaseAuth;
-    FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
