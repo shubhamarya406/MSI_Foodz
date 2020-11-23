@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/sps"
         android:supportsRtl="true"
         android:theme="@style/Theme.MSIFoodz">
-        <activity android:name=".Edit_Profile"></activity>
+        <activity android:name=".edit_profile"></activity>
         <activity
             android:name=".cart"
             android:parentActivityName=".Dashboard" />

@@ -132,7 +132,7 @@
             <TextView
                 android:id="@+id/email_id_profile"
                 android:layout_width="wrap_content"
-                android:text="Parichayman2@gmail.com"
+                android:text="Email id"
                 android:paddingLeft="20dp"
                 android:layout_gravity="center_vertical"
 
@@ -151,7 +151,7 @@
             <TextView
                 android:id="@+id/phone_num_id_profile"
                 android:layout_width="wrap_content"
-                android:text="8802571144"
+                android:text="Phone Number"
                 android:paddingLeft="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_height="wrap_content"/>
@@ -159,6 +159,7 @@
     </LinearLayout>
 
     <soup.neumorphism.NeumorphButton
+        android:id="@+id/edit_btn_id_profile"
         android:layout_width="180dp"
         android:layout_height="80dp"
         android:text="Edit Details"
