@@ -10,6 +10,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,6 +41,9 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     List<Dashboard_food_category_details> food;
     private DrawerLayout drawer;
     NavigationView navigationView;
+
+    //    FirebaseAuth firebaseAuth;
+//    FirebaseUser firebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +70,30 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         Dashboard_rv_Adapter myAdapter=new Dashboard_rv_Adapter(this,food);
         rv.setLayoutManager(new GridLayoutManager(this,2));
         rv.setAdapter(myAdapter);
+        rv.addOnItemTouchListener(new RecyclerItemClickListener(this, rv ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        Log.d("Success","item clicked");
+                        Intent in = new Intent(view.getContext(),ItemExpander.class);
+                        Log.d("Success",Integer.toString(position));
+                        in.putExtra("Position",Integer.toString(position));
+                        startActivity(in);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+
+                    }
+                })
+        );
+
+
+       /* @SuppressLint("ResourceType") View beverages = findViewById(R.drawable.beverages);
+        beverages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Success","beverages opened");
+            }
+        });*/
     }
 
     @Override
