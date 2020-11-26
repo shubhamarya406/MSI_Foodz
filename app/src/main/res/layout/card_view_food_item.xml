@@ -16,17 +16,37 @@
             android:layout_weight="3"
             android:layout_height="0dp"
             />
-        <TextView
-            android:id="@+id/food_name_card_view"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/food_name_card_view"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
             android:text="Food item name"
             android:textSize="20sp"
             android:textColor="@android:color/black"
             android:padding="10dp"
-            android:gravity="center"
             />
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/login_btn_login"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                app:neumorph_backgroundColor="#56DF6D09"
+                android:text="Add"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:clickable="true"
+                android:layout_gravity="top"
+                app:neumorph_shapeType="flat"
+                android:focusable="true" />
+        </LinearLayout>
     </LinearLayout>
 
 </soup.neumorphism.NeumorphCardView>

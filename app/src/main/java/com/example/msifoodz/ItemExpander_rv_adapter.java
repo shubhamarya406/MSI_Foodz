@@ -38,7 +38,9 @@ public class ItemExpander_rv_adapter extends RecyclerView.Adapter <ItemExpander_
         holder.food_item_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.startActivity(new Intent(mContext,food_list.class));
+                Intent intent=new Intent(mContext,food_list.class);
+                intent.putExtra("food_name_key",food_name.get(position));
+                mContext.startActivity(intent);
             }
         });
     }

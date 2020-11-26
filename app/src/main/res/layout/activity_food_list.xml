@@ -7,9 +7,106 @@
     android:orientation="vertical"
     tools:context=".food_list">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_food_list"
+    <soup.neumorphism.NeumorphImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.70"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights">
+
+            <TextView
+                android:id="@+id/food_name_food_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/racing_sans_one"
+                android:gravity="center_vertical"
+                android:text="Food Name"
+                android:textSize="30sp"
+                tools:ignore="NestedWeights" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/eczar"
+                    android:text="Price: ₹ "
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/eczar"
+                    android:text="Amount"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30">
+
+            <com.like.LikeButton
+                android:id="@+id/like_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/cart_id_food_item"
+                app:icon_size="10dp"
+                app:icon_type="heart"
+                app:liked="false" />
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cart_id_food_item"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    style="@style/Widget.Neumorph.ImageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cart" />
+            </soup.neumorphism.NeumorphCardView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/login_btn_login"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Add To Cart"
+        android:textAllCaps="true"
+        app:neumorph_backgroundColor="#56DF6D09"
+        app:neumorph_shapeType="flat" />
+
 </LinearLayout>

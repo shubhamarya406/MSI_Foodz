@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MSIFoodz" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#F8831C</item>
+        <item name="colorPrimary">#F39645</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

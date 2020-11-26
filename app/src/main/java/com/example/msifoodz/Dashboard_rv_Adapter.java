@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class Dashboard_rv_Adapter extends RecyclerView.Adapter <Dashboard_rv_Adapter.viewHolder>{
 
     private Context mContext;
@@ -57,7 +59,7 @@ public class Dashboard_rv_Adapter extends RecyclerView.Adapter <Dashboard_rv_Ada
     public static class viewHolder extends RecyclerView.ViewHolder{
         TextView food_category;
         ImageView food_image;
-        CardView foodCard;
+        NeumorphCardView foodCard;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);

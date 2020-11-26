@@ -40,7 +40,7 @@ public class ItemExpander extends AppCompatActivity {
                                     List<String> data = (List<String>) document.get("Items");
                                     RecyclerView food_item_rv = findViewById(R.id.recycler_view_item_expander);
                                     ItemExpander_rv_adapter myAdapter = new ItemExpander_rv_adapter(ItemExpander.this, data);
-                                    food_item_rv.setLayoutManager(new GridLayoutManager(ItemExpander.this,2));
+                                    food_item_rv.setLayoutManager(new LinearLayoutManager(ItemExpander.this));
                                     food_item_rv.setAdapter(myAdapter);
                                 }
                             } else {
