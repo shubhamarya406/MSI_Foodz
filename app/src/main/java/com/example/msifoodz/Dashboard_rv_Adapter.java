@@ -40,10 +40,10 @@ public class Dashboard_rv_Adapter extends RecyclerView.Adapter <Dashboard_rv_Ada
         holder.foodCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent=new Intent(mContext,Dashboard.class);
-//                intent.putExtra("category",mData.get(position).getFoodCategory());
-//                intent.putExtra("image",mData.get(position).getThumbnail());
-//                mContext.startActivity(intent);
+                Intent intent=new Intent(mContext,food_list.class);
+                intent.putExtra("category",mData.get(position).getFoodCategory());
+                //intent.putExtra("image",mData.get(position).getThumbnail());
+                mContext.startActivity(intent);
             }
 
         });

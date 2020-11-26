@@ -4,6 +4,7 @@
     package="com.example.msifoodz">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,8 @@
         android:roundIcon="@drawable/sps"
         android:supportsRtl="true"
         android:theme="@style/Theme.MSIFoodz">
-        <activity android:name=".edit_profile"></activity>
+        <activity android:name=".food_list" />
+        <activity android:name=".edit_profile" />
         <activity
             android:name=".cart"
             android:parentActivityName=".Dashboard" />

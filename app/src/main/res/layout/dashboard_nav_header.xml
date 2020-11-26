@@ -11,16 +11,9 @@
     >
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="102dp"
-        android:src="@drawable/ic_profile" />
-    <TextView
-        android:id="@+id/name_nav_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingStart="20dp"
-        android:text="Name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        android:layout_width="150dp"
+        android:layout_height="152dp"
+        android:src="@drawable/sps"
+        />
 
 </LinearLayout>

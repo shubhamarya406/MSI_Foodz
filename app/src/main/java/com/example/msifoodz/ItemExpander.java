@@ -2,6 +2,9 @@ package com.example.msifoodz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,14 +16,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ItemExpander extends AppCompatActivity {
 
     private FirebaseFirestore db;
 
-    public void setTextFromDb(String category, TextView tv){
-        try{
+
+    public void setTextFromDb(String category) {
+        try {
             db = FirebaseFirestore.getInstance();
             db.collection("category")
                     .whereEqualTo("Category", category)
@@ -29,23 +35,21 @@ public class ItemExpander extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                                     Log.d("Success", document.getId() + " => " + document.getData());
-                                    List<String> data = (List<String>)document.get("Items");
-                                    tv.setText("");
-                                    for(int i = 0; i < data.size(); i++){
-                                        tv.append(data.get(i));
-                                        tv.append("\n");
-                                    }
+                                    List<String> data = (List<String>) document.get("Items");
+                                    RecyclerView food_item_rv = findViewById(R.id.recycler_view_item_expander);
+                                    ItemExpander_rv_adapter myAdapter = new ItemExpander_rv_adapter(ItemExpander.this, data);
+                                    food_item_rv.setLayoutManager(new LinearLayoutManager(ItemExpander.this));
+                                    food_item_rv.setAdapter(myAdapter);
                                 }
                             } else {
                                 Log.d("Error", "Error getting documents: ", task.getException());
                             }
                         }
                     });
-        }catch(Exception e)
-        {
-            Log.d("Error",e.getStackTrace().toString());
+        } catch (Exception e) {
+            Log.d("Error", e.getStackTrace().toString());
             e.printStackTrace();
 
         }
@@ -56,10 +60,9 @@ public class ItemExpander extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_expander);
 
-        TextView tv = (TextView)findViewById(R.id.categoryItems);
         Bundle data = getIntent().getExtras();
-        if(data == null){
-            return ;
+        if (data == null) {
+            return;
         }
 
         String category;
@@ -67,34 +70,28 @@ public class ItemExpander extends AppCompatActivity {
         int pos = Integer.parseInt(data.getString("Position"));
 
 
-        if(pos == 0){
+        if (pos == 0) {
             category = "Beverages";
-            setTextFromDb(category,tv);
-        }
-        else if(pos == 1){
+            setTextFromDb(category);
+        } else if (pos == 1) {
             category = "Snacks";
-            setTextFromDb(category,tv);
-        }
-        else if(pos == 2){
+            setTextFromDb(category);
+        } else if (pos == 2) {
             category = "Chocolates";
-            setTextFromDb(category,tv);
-        }
-        else if(pos == 3){
+            setTextFromDb(category);
+        } else if (pos == 3) {
             category = "Biscuits";
-            setTextFromDb(category,tv);
-        }
-        else if(pos == 4){
+            setTextFromDb(category);
+        } else if (pos == 4) {
             category = "Meals";
-            setTextFromDb(category,tv);
-        }
-        else if(pos == 5){
+            setTextFromDb(category);
+        } else if (pos == 5) {
             category = "Rolls";
-            setTextFromDb(category,tv);
-        }
-        else{
+            setTextFromDb(category);
+        } else {
             category = "Not selected";
         }
 
-        Log.d("Success",category);
+        Log.d("Success", category);
     }
 }

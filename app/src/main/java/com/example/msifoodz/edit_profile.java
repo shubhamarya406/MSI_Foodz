@@ -3,6 +3,7 @@ package com.example.msifoodz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -55,6 +56,7 @@ public class edit_profile extends AppCompatActivity {
                 Toast.makeText(edit_profile.this,"Profile Updated Successfully",Toast.LENGTH_SHORT).show();
 
                 progressDialog.dismiss();
+                startActivity(new Intent(getApplicationContext(),Dashboard.class));
             }
         });
 
