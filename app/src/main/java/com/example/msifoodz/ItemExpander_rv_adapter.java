@@ -29,6 +29,7 @@ public class ItemExpander_rv_adapter extends RecyclerView.Adapter <ItemExpander_
     private Context mContext;
     private List<String> food_name;
     private String category;
+    ImageView food_image_card_view;
 
     public ItemExpander_rv_adapter(Context mContext, List<String> food_name, String category) {
         this.mContext = mContext;
@@ -49,8 +50,8 @@ public class ItemExpander_rv_adapter extends RecyclerView.Adapter <ItemExpander_
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         holder.food_name.setText(food_name.get(position));
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child(food_name.get(position));
-        //GlideApp.with(this).load(storageReference).into(food_image_card_view);
+        StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://msi-foodz.appspot.com/images/"+food_name.get(position)+".jpg");
+        GlideApp.with(mContext).load(storageReference).fitCenter().into(holder.food_image_card_view);
         holder.food_item_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,16 +63,6 @@ public class ItemExpander_rv_adapter extends RecyclerView.Adapter <ItemExpander_
         });
     }
 
-    public void loadWithGlide(){
-
-        StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://msi-foodz.appspot.com/images/Aloo parantha.jpg");
-
-// ImageView in your Activity
-
-
-// Download directly from StorageReference using Glide
-// (See MyAppGlideModule for Loader registration)
-    }
     @Override
     public int getItemCount() {
         return food_name.size();
@@ -80,7 +71,7 @@ public class ItemExpander_rv_adapter extends RecyclerView.Adapter <ItemExpander_
     public static class viewHolder extends RecyclerView.ViewHolder{
         TextView food_name;
         NeumorphCardView food_item_card;
-        NeumorphImageView food_image_card_view;
+        ImageView food_image_card_view;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);

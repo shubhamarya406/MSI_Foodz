@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +31,7 @@ public class food_list extends AppCompatActivity {
 
     TextView food_nm_tv;
     TextView amount;
+    ImageView detailImage;
     private FirebaseFirestore db;
 
     @Override
@@ -40,9 +44,12 @@ public class food_list extends AppCompatActivity {
         //hooks
         food_nm_tv= findViewById(R.id.food_name_food_list);
         amount = findViewById(R.id.amount);
+        detailImage = findViewById(R.id.detail_image);
         String food = data.getString("food_name_key");
         food_nm_tv.setText(food);
         String category = data.getString("category");
+        StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://msi-foodz.appspot.com/images/"+food+".jpg");
+        GlideApp.with(this).load(storageReference).into(detailImage);
 
         try {
             db = FirebaseFirestore.getInstance();
