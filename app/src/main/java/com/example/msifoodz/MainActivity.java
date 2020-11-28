@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         slogan.setAnimation(bottom);
         name.setAnimation(middle_right);
 
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

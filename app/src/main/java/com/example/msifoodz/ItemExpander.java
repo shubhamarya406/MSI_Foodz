@@ -38,8 +38,8 @@ public class ItemExpander extends AppCompatActivity {
                                 for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                                     Log.d("Success", document.getId() + " => " + document.getData());
                                     List<String> data = (List<String>) document.get("Items");
-                                    RecyclerView food_item_rv = findViewById(R.id.recycler_view_item_expander);
-                                    ItemExpander_rv_adapter myAdapter = new ItemExpander_rv_adapter(ItemExpander.this, data);
+                                    RecyclerView food_item_rv = findViewById(R.id.recycler_view);
+                                    ItemExpander_rv_adapter myAdapter = new ItemExpander_rv_adapter(ItemExpander.this, data, category);
                                     food_item_rv.setLayoutManager(new LinearLayoutManager(ItemExpander.this));
                                     food_item_rv.setAdapter(myAdapter);
                                 }
