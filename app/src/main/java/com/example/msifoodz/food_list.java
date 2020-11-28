@@ -7,33 +7,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.util.List;
-import java.util.Objects;
-
+import com.google.firebase.firestore.Query;
 
 public class food_list extends AppCompatActivity {
 
     TextView food_nm_tv;
-    TextView amount;
-    ImageView detailImage;
-    private FirebaseFirestore db;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,38 +30,6 @@ public class food_list extends AppCompatActivity {
 
         //hooks
         food_nm_tv= findViewById(R.id.food_name_food_list);
-        amount = findViewById(R.id.amount);
-        detailImage = findViewById(R.id.detail_image);
-        String food = data.getString("food_name_key");
-        food_nm_tv.setText(food);
-        String category = data.getString("category");
-        StorageReference storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://msi-foodz.appspot.com/images/"+food+".jpg");
-        GlideApp.with(this).load(storageReference).into(detailImage);
-
-        try {
-            db = FirebaseFirestore.getInstance();
-            db.collection(category)
-                    .whereEqualTo("category", category)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
-                                    Log.d("Success", document.getId() + " => " + document.getData());
-                                    Long value = document.getLong(food);
-                                    amount.setText(value.toString());
-
-                                }
-                            } else {
-                                Log.d("Error", "Error getting documents: ", task.getException());
-                            }
-                        }
-                    });
-        } catch (Exception e) {
-            Log.d("Error", e.getStackTrace().toString());
-            e.printStackTrace();
-
+        food_nm_tv.setText(data.getString("food_name_key"));
         }
-    }
-        }
+}

@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/sps"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MSIFoodz">
+        android:theme="@style/Theme.MSIFoodz"
+        tools:replace="android:icon,android:theme">
         <activity android:name=".food_list"
             android:parentActivityName=".ItemExpander"/>
         <activity android:name=".edit_profile" />

@@ -32,12 +32,15 @@
             android:textColor="@android:color/black"
             android:padding="10dp"
             />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp">
             <soup.neumorphism.NeumorphButton
                 android:id="@+id/login_btn_login"
                 style="@style/Widget.Neumorph.Button"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:neumorph_backgroundColor="#56DF6D09"
                 android:text="Add"
                 android:textAllCaps="true"
@@ -45,7 +48,16 @@
                 android:clickable="true"
                 android:layout_gravity="top"
                 app:neumorph_shapeType="flat"
-                android:focusable="true" />
+                android:focusable="true"
+                android:visibility="visible"/>
+                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    app:initialNumber="1"
+                    app:finalNumber="10"
+                    android:visibility="invisible"/>
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 

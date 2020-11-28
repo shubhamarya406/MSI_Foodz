@@ -97,18 +97,37 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/login_btn_login"
-        style="@style/Widget.Neumorph.Button"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
+        android:layout_weight="0.4">
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/add_to_cart_btn_id_food_list"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
         android:text="Add To Cart"
         android:textAllCaps="true"
         app:neumorph_backgroundColor="#56DF6D09"
-        app:neumorph_shapeType="flat" />
+        app:neumorph_shapeType="flat"
+        android:visibility="visible"/>
 
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/elegant_number_button_id_food_list"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            app:initialNumber="0"
+            app:finalNumber="10"
+            android:layout_gravity="center|bottom"
+            android:visibility="invisible"
+            app:backGroundColor="#56DF6D09"
+            app:textSize="9sp"
+            tools:ignore="SmallSp"
+            app:backgroundDrawable="@drawable/capsule"
+            app:textColor="@color/black"
+            />
+    </FrameLayout>
 </LinearLayout>
