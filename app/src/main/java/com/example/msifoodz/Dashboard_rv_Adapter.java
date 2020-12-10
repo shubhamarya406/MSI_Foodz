@@ -18,8 +18,8 @@ import soup.neumorphism.NeumorphCardView;
 
 public class Dashboard_rv_Adapter extends RecyclerView.Adapter <Dashboard_rv_Adapter.viewHolder>{
 
-    private Context mContext;
-    private List<Dashboard_food_category_details> mData;
+    private final Context mContext;
+    private final List<Dashboard_food_category_details> mData;
 
     public Dashboard_rv_Adapter(Context mContext, List<Dashboard_food_category_details> mData) {
         this.mContext = mContext;

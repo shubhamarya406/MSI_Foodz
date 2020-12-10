@@ -99,7 +99,7 @@ public class Sign_up extends AppCompatActivity {
                                 }
                             });
                             Toast.makeText(Sign_up.this, "User Created...", Toast.LENGTH_SHORT).show();
-                            String userID = Objects.requireNonNull(fAuth.getCurrentUser()).getUid().toString();
+                            String userID = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
                             CollectionReference collectionReference = db.collection("users");
                             Map<String, Object> user = new HashMap<>();
                             user.put("Name", name);

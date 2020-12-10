@@ -37,7 +37,7 @@
                 android:layout_weight="1"
                 android:layout_height="60dp">
             <soup.neumorphism.NeumorphButton
-                android:id="@+id/login_btn_login"
+                android:id="@+id/add_btn_card_view_food_item"
                 style="@style/Widget.Neumorph.Button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -51,6 +51,7 @@
                 android:focusable="true"
                 android:visibility="visible"/>
                 <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                    android:id="@+id/elegant_number_button_id_cardView_food"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

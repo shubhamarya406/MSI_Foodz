@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
+                    android:id="@+id/recycler_view_cart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
@@ -83,57 +83,6 @@
                     android:scrollbarSize="4dp"
                     android:scrollbars="vertical" />
 
-                <View
-                    android:id="@+id/viewrecycle"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layout_below="@+id/recycler_view"
-                    android:background="@color/grey" />
-
-
-                <LinearLayout
-                    android:id="@+id/linearwallet"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/recycler_view"
-                    android:orientation="horizontal"
-                    android:padding="10dp"
-                    android:weightSum="1">
-
-                    <CheckBox
-                        android:id="@+id/checkWallet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.05" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="0.75"
-                        android:text="@string/wallet"
-                        android:textColor="@color/finestBlack"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtBalance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="0.2"
-                        android:gravity="right"
-                        android:text="50"
-                        android:textColor="@color/finestBlack"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
 
                 <View
                     android:id="@+id/viewwallet"
@@ -145,40 +94,6 @@
 
             </RelativeLayout>
         </ScrollView>
-
-
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viewwallet"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.7"
-            android:gravity="right"
-            android:text="SubTotal"
-            android:textColor="@color/finestBlack"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtSubTotal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:gravity="right"
-            android:text="$48.22"
-            android:textColor="@color/finestBlack"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
 
 
     <View

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Widget.Neumorph.CardView"
+    app:neumorph_shapeType="basin"
+    android:id="@+id/card_view_cart_food_item">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/item_name_id_cart_card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="Item Name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/Quantity_id_cart_card_view"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            app:initialNumber="1"
+            app:finalNumber="10"
+            app:backGroundColor="#60FAC094"
+            app:backgroundDrawable="@drawable/capsule"
+            app:textColor="@color/black"
+            app:textSize="8sp"
+
+            />
+
+        <TextView
+            android:id="@+id/Price_id_cart_card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="Price"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</soup.neumorphism.NeumorphCardView>

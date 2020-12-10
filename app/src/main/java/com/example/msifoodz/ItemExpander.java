@@ -6,10 +6,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,10 +27,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import soup.neumorphism.NeumorphButton;
+
 public class ItemExpander extends AppCompatActivity {
 
     private FirebaseFirestore db;
-
+    ElegantNumberButton elegantNumberButton;
+    NeumorphButton add_btn;
+    View view;
 
     public void setTextFromDb(String category) {
         try {
@@ -93,5 +104,22 @@ public class ItemExpander extends AppCompatActivity {
         }
 
         Log.d("Success", category);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_right_item_expander, menu);
+        return true;
+    }
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId() == R.id.cart_id_item_expander) {
+            startActivity(new Intent(getApplicationContext(), cart.class));
+        } else {
+            super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }
