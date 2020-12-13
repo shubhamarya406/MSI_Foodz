@@ -50,7 +50,7 @@ public class cart_rv_adapter extends RecyclerView.Adapter <cart_rv_adapter.viewH
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
                 Cart_food_item_list cart_food_item_list= mData.get(position);
                 cart_food_item_list.setQuantity(newValue);
-                new Database(Cart).updateCart(cart_food_item_list);
+                new Database(Cart).addToCarts(cart_food_item_list);
                 List<Cart_food_item_list> carts=new Database(Cart).getCarts();
 
                 int totalPrice=0;

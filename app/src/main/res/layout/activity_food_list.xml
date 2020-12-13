@@ -125,7 +125,7 @@
             android:visibility="invisible"
             app:backGroundColor="#56DF6D09"
             app:textSize="9sp"
-            tools:ignore="SmallSp"
+            tools:ignore="MissingClass,SmallSp"
             app:backgroundDrawable="@drawable/capsule"
             app:textColor="@color/black"
             />

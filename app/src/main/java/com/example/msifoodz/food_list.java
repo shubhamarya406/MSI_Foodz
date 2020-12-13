@@ -68,7 +68,7 @@ public class food_list extends AppCompatActivity {
                 elegantNumberButton.setVisibility(View.VISIBLE);
                 neumorphButton.setVisibility(View.INVISIBLE);
                 elegantNumberButton.setNumber("1");
-                new Database(getBaseContext()).addToCarts(new Cart_food_item_list(fname,fprice,quantity));
+                new Database(getBaseContext()).addToCarts(new Cart_food_item_list(food_nm_tv.getText().toString(),Long.parseLong(amount.getText().toString()),Integer.parseInt(elegantNumberButton.getNumber())));
             }
         });
         elegantNumberButton.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
@@ -79,6 +79,7 @@ public class food_list extends AppCompatActivity {
                     elegantNumberButton.setVisibility(View.INVISIBLE);
                     neumorphButton.setVisibility(View.VISIBLE);
                 }
+                new Database(getBaseContext()).addToCarts(new Cart_food_item_list(food_nm_tv.getText().toString(),Long.parseLong(amount.getText().toString()),quantity));
                 food_item_lists.put("Food_Quantity",quantity);
             }
         });
