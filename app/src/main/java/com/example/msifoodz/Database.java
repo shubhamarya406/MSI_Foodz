@@ -24,30 +24,32 @@ import java.util.Map;
  * Created by User on 04-Jul-18.
  */
 
-public class Database extends SQLiteOpenHelper {
+public class Database //extends SQLiteOpenHelper
+  {
 
     private FirebaseFirestore db;
     FirebaseAuth firebaseAuth;
-    private static final String DB_NAME = "MsiFoodzDB.db";
-    private static final String TABLE_NAME = "OrderDetails";
-    private static final int DB_VERSION = 1;
+   // private static final String DB_NAME = "MsiFoodzDB.db";
+   // private static final String TABLE_NAME = "OrderDetails";
+   // private static final int DB_VERSION = 1;
+      Context context;
     private static final String TAG = "Basel";
     private static final String ERROR = "Error";
     private static final String SUCCESS = "Success";
 
-    public Database(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
-    }
+      public Database(Context context) {
+          this.context = context;
+      }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (Food_name TEXT, Food_Price INTEGER, Food_Quantity INTEGER)");
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-    }
+//      @Override
+//    public void onCreate(SQLiteDatabase db) {
+//        db.execSQL("CREATE TABLE " + TABLE_NAME + " (Food_name TEXT, Food_Price INTEGER, Food_Quantity INTEGER)");
+//    }
+//
+//    @Override
+//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+//
+//    }
 
 
     public List<Cart_food_item_list> getCarts() {
@@ -81,7 +83,7 @@ public class Database extends SQLiteOpenHelper {
             }
         });
         try {
-            Thread.sleep(2000);
+            Thread.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -26,6 +26,7 @@ import soup.neumorphism.NeumorphCardView;
 public class cart_rv_adapter extends RecyclerView.Adapter <cart_rv_adapter.viewHolder>{
 
     private final cart Cart;
+
     private final List<Cart_food_item_list> mData;
 
     public cart_rv_adapter(cart cart, List<Cart_food_item_list> mData) {
@@ -44,7 +45,11 @@ public class cart_rv_adapter extends RecyclerView.Adapter <cart_rv_adapter.viewH
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, final int position) {
+
+        Locale locale=new Locale("en","in");
+        NumberFormat frmt=NumberFormat.getCurrencyInstance(locale);
         holder.quantity.setNumber(String.valueOf((mData.get(position).getQuantity())));
+        holder.food_name.setText(mData.get(position).getFood_name());
         holder.quantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
@@ -53,18 +58,24 @@ public class cart_rv_adapter extends RecyclerView.Adapter <cart_rv_adapter.viewH
                 new Database(Cart).addToCarts(cart_food_item_list);
                 List<Cart_food_item_list> carts=new Database(Cart).getCarts();
 
-                int totalPrice=0;
+                long price,sum=0;
+                price=mData.get(position).getFood_price()*mData.get(position).getQuantity();
+                holder.food_price.setText(frmt.format(price));
+
+                long totalPrice=0;
                 for(Cart_food_item_list i:carts)
                     totalPrice+=i.getFood_price()*i.getQuantity();
-                Locale locale=new Locale("en","India");
-                NumberFormat frmt=NumberFormat.getCurrencyInstance(locale);
-                Cart.totalAmount.setText(frmt.format(totalPrice));
 
-                long price=mData.get(position).getFood_price()*mData.get(position).getQuantity();
-                holder.food_price.setText(frmt.format(price));
-                holder.food_name.setText(mData.get(position).getFood_name());
+
+
+
+                Cart.totalAmount.setText(frmt.format(totalPrice));
             }
+
         });
+
+
+
         holder.foodCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

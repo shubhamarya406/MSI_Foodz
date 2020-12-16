@@ -76,10 +76,10 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_cart"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:clipToPadding="false"
                     android:fadeScrollbars="false"
-                    android:nestedScrollingEnabled="false"
+                    android:nestedScrollingEnabled="true"
                     android:scrollbarSize="4dp"
                     android:scrollbars="vertical" />
 

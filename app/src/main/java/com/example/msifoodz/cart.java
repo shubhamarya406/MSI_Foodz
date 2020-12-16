@@ -40,7 +40,7 @@ public class cart extends AppCompatActivity {
         int totalprc=0;
         for(Cart_food_item_list i:carts)
             totalprc+=i.getFood_price()*i.getQuantity();
-        Locale locale=new Locale("en","US");
+        Locale locale=new Locale("en","in");
         NumberFormat frmt=NumberFormat.getCurrencyInstance(locale);
         totalAmount.setText(frmt.format(totalprc));
     }
