@@ -46,36 +46,15 @@ public class cart_rv_adapter extends RecyclerView.Adapter <cart_rv_adapter.viewH
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, final int position) {
 
+        long total = 0;
         Locale locale=new Locale("en","in");
         NumberFormat frmt=NumberFormat.getCurrencyInstance(locale);
-        holder.quantity.setNumber(String.valueOf((mData.get(position).getQuantity())));
+        holder.quantity.setText(String.valueOf((mData.get(position).getQuantity())));
         holder.food_name.setText(mData.get(position).getFood_name());
-        holder.quantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
-            @Override
-            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
-                Cart_food_item_list cart_food_item_list= mData.get(position);
-                cart_food_item_list.setQuantity(newValue);
-                new Database(Cart).addToCarts(cart_food_item_list);
-                List<Cart_food_item_list> carts=new Database(Cart).getCarts();
-
-                long price,sum=0;
-                price=mData.get(position).getFood_price()*mData.get(position).getQuantity();
-                holder.food_price.setText(frmt.format(price));
-
-                long totalPrice=0;
-                for(Cart_food_item_list i:carts)
-                    totalPrice+=i.getFood_price()*i.getQuantity();
-
-
-
-
-                Cart.totalAmount.setText(frmt.format(totalPrice));
-            }
-
-        });
-
-
-
+        long itemPrice = Long.parseLong(String.valueOf(mData.get(position).getFood_price() * mData.get(position).getQuantity()));
+        holder.food_price.setText(frmt.format(itemPrice));
+        total = total + itemPrice;
+        Cart.totalAmount.setText(frmt.format(total));
         holder.foodCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +76,7 @@ public class cart_rv_adapter extends RecyclerView.Adapter <cart_rv_adapter.viewH
     public static class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener , View.OnCreateContextMenuListener{
 
         TextView food_name,food_price;
-        ElegantNumberButton quantity;
+        TextView quantity;
         NeumorphCardView foodCard;
         clickListener ClickListener;
 

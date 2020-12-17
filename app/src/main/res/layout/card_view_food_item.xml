@@ -31,34 +31,9 @@
             android:textSize="20sp"
             android:textColor="@android:color/black"
             android:padding="10dp"
+            android:textAlignment="center"
             />
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="60dp">
-            <soup.neumorphism.NeumorphButton
-                android:id="@+id/add_btn_card_view_food_item"
-                style="@style/Widget.Neumorph.Button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:neumorph_backgroundColor="#56DF6D09"
-                android:text="Add"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:clickable="true"
-                android:layout_gravity="top"
-                app:neumorph_shapeType="flat"
-                android:focusable="true"
-                android:visibility="visible"/>
-                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                    android:id="@+id/elegant_number_button_id_cardView_food"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    app:initialNumber="1"
-                    app:finalNumber="10"
-                    android:visibility="invisible"/>
-            </FrameLayout>
+
         </LinearLayout>
     </LinearLayout>
 

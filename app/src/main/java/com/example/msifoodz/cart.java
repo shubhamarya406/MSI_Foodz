@@ -18,6 +18,10 @@ public class cart extends AppCompatActivity {
 
     RecyclerView recyclerView;
     TextView totalAmount;
+
+    public cart() {
+    }
+
     List<Cart_food_item_list> carts=new ArrayList<>();
     cart_rv_adapter cartAdapter;
     @Override
@@ -37,11 +41,12 @@ public class cart extends AppCompatActivity {
         cartAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(cartAdapter);
 
-        int totalprc=0;
+        /*int totalprc=0;
         for(Cart_food_item_list i:carts)
             totalprc+=i.getFood_price()*i.getQuantity();
         Locale locale=new Locale("en","in");
         NumberFormat frmt=NumberFormat.getCurrencyInstance(locale);
-        totalAmount.setText(frmt.format(totalprc));
+        totalAmount.setText(frmt.format(totalprc));*/
+        new Database(this).setTotalPrice(totalAmount);
     }
 }

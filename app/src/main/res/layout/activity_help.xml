@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="We Are Happy To Help You..."
-        android:textSize="30sp"
+        android:textSize="28dp"
         android:layout_marginBottom="50dp"/>
 
         <soup.neumorphism.NeumorphCardView

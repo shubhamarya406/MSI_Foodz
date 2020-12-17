@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="viewCart"
     android:orientation="vertical"
     tools:context=".food_list">
 
@@ -73,27 +74,9 @@
                 android:id="@+id/like_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@id/cart_id_food_item"
                 app:icon_size="10dp"
                 app:icon_type="heart"
                 app:liked="false" />
-
-            <soup.neumorphism.NeumorphCardView
-                android:id="@+id/cart_id_food_item"
-                style="@style/Widget.Neumorph.CardView"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp">
-
-                <ImageView
-                    style="@style/Widget.Neumorph.ImageButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:src="@drawable/cart" />
-            </soup.neumorphism.NeumorphCardView>
         </RelativeLayout>
     </LinearLayout>
 
@@ -101,33 +84,33 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.4">
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/add_to_cart_btn_id_food_list"
-        style="@style/Widget.Neumorph.Button"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:text="Add To Cart"
-        android:textAllCaps="true"
-        app:neumorph_backgroundColor="#56DF6D09"
-        app:neumorph_shapeType="flat"
-        android:visibility="visible"/>
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/add_to_cart_btn_id_food_list"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Add To Cart"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            app:neumorph_backgroundColor="#56DF6D09"
+            app:neumorph_shapeType="flat" />
 
         <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
             android:id="@+id/elegant_number_button_id_food_list"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            app:initialNumber="0"
-            app:finalNumber="10"
             android:layout_gravity="center|bottom"
             android:visibility="invisible"
             app:backGroundColor="#56DF6D09"
-            app:textSize="9sp"
-            tools:ignore="MissingClass,SmallSp"
             app:backgroundDrawable="@drawable/capsule"
+            app:finalNumber="10"
+            app:initialNumber="0"
             app:textColor="@color/black"
-            />
+            app:textSize="9sp"
+            tools:ignore="MissingClass,SmallSp" />
     </FrameLayout>
 </LinearLayout>

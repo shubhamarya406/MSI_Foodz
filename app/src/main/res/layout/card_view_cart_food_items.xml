@@ -24,17 +24,16 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        <TextView
             android:id="@+id/Quantity_id_cart_card_view"
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            app:initialNumber="1"
-            app:finalNumber="10"
-            app:backGroundColor="#60FAC094"
-            app:backgroundDrawable="@drawable/capsule"
-            app:textColor="@color/black"
-            app:textSize="8sp"
+            android:gravity="center"
+            android:text="Quantity"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
 
             />
 
