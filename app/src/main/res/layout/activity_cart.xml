@@ -145,13 +145,14 @@
 
 
                 <soup.neumorphism.NeumorphButton
-                    android:id="@+id/btn_reservation"
+                    android:id="@+id/btn_payment_id_cart"
                     style="@style/Widget.Neumorph.Button"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     app:neumorph_backgroundColor="@color/light_orange"
                     android:padding="10dp"
                     android:gravity="center"
+
                     android:text="Place an order"
 
                     android:textStyle="bold" />

@@ -4,7 +4,7 @@
     package="com.example.msifoodz">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MSIFoodz"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".food_list"
-            android:parentActivityName=".ItemExpander"/>
+        <activity android:name=".paymentpage"></activity>
+        <activity
+            android:name=".food_list"
+            android:parentActivityName=".ItemExpander" />
         <activity android:name=".edit_profile" />
         <activity
             android:name=".cart"
