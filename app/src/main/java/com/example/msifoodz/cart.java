@@ -5,8 +5,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -18,12 +22,15 @@ public class cart extends AppCompatActivity {
 
     RecyclerView recyclerView;
     TextView totalAmount;
+    private Context mContext = this;
 
     public cart() {
     }
 
     List<Cart_food_item_list> carts=new ArrayList<>();
     cart_rv_adapter cartAdapter;
+    Button cart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +39,17 @@ public class cart extends AppCompatActivity {
         recyclerView=findViewById(R.id.recycler_view_cart);
         recyclerView.setHasFixedSize(true);
         totalAmount=findViewById(R.id.txtTotal);
+        cart = findViewById(R.id.btn_payment_id_cart);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         loadCartList();
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(mContext,paymentpage.class);
+                mContext.startActivity(in);
+            }
+        });
+
     }
     public void loadCartList(){
         carts=new Database(this).getCarts();
