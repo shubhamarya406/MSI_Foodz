@@ -10,8 +10,10 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -50,6 +52,20 @@ public class Sign_up extends AppCompatActivity {
         phone_s = findViewById(R.id.phone_number_signup);
         password_s = findViewById(R.id.password_signup);
         fAuth = FirebaseAuth.getInstance();
+        Spinner s = findViewById(R.id.Gender_spinner);
+        Spinner s1 = findViewById(R.id.Shift_spinner);
+
+
+        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.GENDER, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        s.setAdapter(adapter);
+
+
+        ArrayAdapter<CharSequence> adapter1 =ArrayAdapter.createFromResource(this,R.array.SHIFT, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        s1.setAdapter(adapter1);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         if (fAuth.getCurrentUser() != null) {

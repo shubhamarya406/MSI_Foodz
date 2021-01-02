@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -116,6 +114,87 @@
                 <soup.neumorphism.NeumorphCardView
                     style="@style/Widget.Neumorph.CardView"
                     android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:neumorph_shapeType="basin"
+                    >
+
+                    <EditText
+                        android:id="@+id/Department_edit_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/antic"
+                        android:hint="Department"
+                        android:inputType="textAutoCorrect"
+                        android:textStyle="bold|italic"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="20sp" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:neumorph_shapeType="basin"
+                    >
+                    <Spinner
+                        android:id="@+id/Gender_spinner"
+                        android:layout_width="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:paddingTop="7dp"
+                        android:spinnerMode="dialog"
+
+                        />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:neumorph_shapeType="basin"
+                    >
+
+                    <Spinner
+                        android:id="@+id/Shift_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingTop="7dp"
+                        android:spinnerMode="dialog"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+
+                        />
+                </soup.neumorphism.NeumorphCardView>
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:neumorph_shapeType="basin"
+                    >
+
+                    <EditText
+                        android:id="@+id/Year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/antic"
+                        android:hint="Year of Admission"
+                        android:inputType="phone"
+                        android:textStyle="bold|italic"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="20sp" />
+                </soup.neumorphism.NeumorphCardView>
+
+                <soup.neumorphism.NeumorphCardView
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
                     app:neumorph_shapeType="basin">
 
@@ -163,4 +242,3 @@
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
-</ScrollView>

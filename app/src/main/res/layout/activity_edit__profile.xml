@@ -149,7 +149,7 @@
         <Spinner
             android:id="@+id/Gender_spinner"
             android:layout_width="match_parent"
-
+            android:paddingTop="7dp"
             android:layout_marginEnd="10dp"
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
@@ -165,16 +165,17 @@
         android:layout_height="70dp"
         app:neumorph_shapeType="basin"
         >
-    <Spinner
-        android:id="@+id/Shift_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
 
-        android:spinnerMode="dialog"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        <Spinner
+            android:id="@+id/Shift_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingTop="7dp"
+            android:spinnerMode="dialog"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
 
-        ></Spinner>
+            />
     </soup.neumorphism.NeumorphCardView>
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
