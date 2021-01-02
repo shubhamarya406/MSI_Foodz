@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:layout_marginTop="30dp"
+    android:layout_marginTop="0dp"
     tools:context=".edit_profile"
     android:orientation="vertical">
 
@@ -55,7 +55,7 @@
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         app:neumorph_shapeType="basin"
         >
 
@@ -77,7 +77,7 @@
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         app:neumorph_shapeType="basin"
         >
 
@@ -100,7 +100,7 @@
     <soup.neumorphism.NeumorphCardView
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         app:neumorph_shapeType="basin"
         >
 
@@ -113,6 +113,90 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/antic"
             android:hint="Phone Number"
+            android:inputType="phone"
+            android:textStyle="bold|italic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20sp" />
+    </soup.neumorphism.NeumorphCardView>
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:neumorph_shapeType="basin"
+        >
+
+        <EditText
+            android:id="@+id/Department_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/antic"
+            android:hint="Department"
+            android:inputType="textAutoCorrect"
+            android:textStyle="bold|italic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20sp" />
+    </soup.neumorphism.NeumorphCardView>
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:neumorph_shapeType="basin"
+        >
+
+        <EditText
+            android:id="@+id/Shift"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/antic"
+            android:hint="Shift"
+            android:inputType="textAutoCorrect"
+            android:textStyle="bold|italic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20sp" />
+    </soup.neumorphism.NeumorphCardView>
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:neumorph_shapeType="basin"
+        >
+
+        <EditText
+            android:id="@+id/Gender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/antic"
+            android:hint="Gender"
+            android:inputType="textAutoCorrect"
+            android:textStyle="bold|italic"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="20sp" />
+    </soup.neumorphism.NeumorphCardView>
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:neumorph_shapeType="basin"
+        >
+
+        <EditText
+            android:id="@+id/Year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/antic"
+            android:hint="Year of Admission"
             android:inputType="phone"
             android:textStyle="bold|italic"
             android:textCursorDrawable="@drawable/cursor"
