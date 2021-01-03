@@ -84,9 +84,6 @@ public class edit_profile extends AppCompatActivity {
                 if (!phone_et.getText().toString().equals("")){
                     documentReference.update("Phone",phone_et.getText().toString());
                 }
-                if (!department_et.getText().toString().equals("")){
-                    documentReference.update("Department",department_et.getText().toString());
-                }
                 if (!year_of_adm_et.getText().toString().equals("")){
                     documentReference.update("Phone",phone_et.getText().toString());
                 }

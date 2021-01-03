@@ -53,7 +53,6 @@ public class Sign_up extends AppCompatActivity {
         email_s = findViewById(R.id.email_signup);
         phone_s = findViewById(R.id.phone_number_signup);
         password_s = findViewById(R.id.password_signup);
-        department_s=findViewById(R.id.Department_sign_up);
         year_of_adm_s=findViewById(R.id.Year);
         fAuth = FirebaseAuth.getInstance();
         Spinner s = findViewById(R.id.Gender_spinner_signup);
@@ -93,10 +92,9 @@ public class Sign_up extends AppCompatActivity {
                 final String name = name_s.getText().toString();
                 final String phone = phone_s.getText().toString();
                 final String year_of_adm = year_of_adm_s.getText().toString();
-                final String department = department_s.getText().toString();
                 final String gender = s.getSelectedItem().toString();
-                final String course = s1.getSelectedItem().toString();
-                final String shift = s2.getSelectedItem().toString();
+                final String course = s2.getSelectedItem().toString();
+                final String shift = s1.getSelectedItem().toString();
 
 //                s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 //                    @Override
@@ -172,7 +170,6 @@ public class Sign_up extends AppCompatActivity {
                             user.put("Name", name);
                             user.put("Email", email);
                             user.put("Phone", phone);
-                            user.put("Department",department);
                             user.put("Gender",gender);
                             user.put("Shift",shift);
                             user.put("Course",course);

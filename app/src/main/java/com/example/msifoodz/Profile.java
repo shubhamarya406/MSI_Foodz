@@ -35,7 +35,6 @@ public class Profile extends AppCompatActivity {
         name_p=findViewById(R.id.name_id_profile);
         gender_p=findViewById(R.id.gender_id_profile);
         course_p=findViewById(R.id.course_id_profile);
-        department_p=findViewById(R.id.department_id_profile);
         shift_p=findViewById(R.id.shift_id_profile);
         year_of_adm_p=findViewById(R.id.year_of_adm_id_profile);
         fAuth=FirebaseAuth.getInstance();
@@ -51,7 +50,6 @@ public class Profile extends AppCompatActivity {
                 name_p.setText(value.getString("Name"));
                 gender_p.setText(value.getString("Gender"));
                 course_p.setText(value.getString("Course"));
-                department_p.setText(value.getString("Department"));
                 shift_p.setText(value.getString("Shift"));
                 year_of_adm_p.setText(value.getString("Year_of_adm"));
             }
