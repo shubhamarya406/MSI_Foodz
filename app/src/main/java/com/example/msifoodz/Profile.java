@@ -20,7 +20,7 @@ import soup.neumorphism.NeumorphButton;
 
 public class Profile extends AppCompatActivity {
 
-    TextView phone_p,email_p,name_p;
+    TextView phone_p,email_p,name_p,gender_p,course_p,department_p,shift_p,year_of_adm_p;
     NeumorphButton edit_btn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -33,6 +33,11 @@ public class Profile extends AppCompatActivity {
         phone_p=findViewById(R.id.phone_num_id_profile);
         email_p=findViewById(R.id.email_id_profile);
         name_p=findViewById(R.id.name_id_profile);
+        gender_p=findViewById(R.id.gender_id_profile);
+        course_p=findViewById(R.id.course_id_profile);
+        department_p=findViewById(R.id.department_id_profile);
+        shift_p=findViewById(R.id.shift_id_profile);
+        year_of_adm_p=findViewById(R.id.year_of_adm_id_profile);
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
         userID=fAuth.getCurrentUser().getUid();
@@ -44,6 +49,11 @@ public class Profile extends AppCompatActivity {
                 phone_p.setText(value.getString("Phone"));
                 email_p.setText(value.getString("Email"));
                 name_p.setText(value.getString("Name"));
+                gender_p.setText(value.getString("Gender"));
+                course_p.setText(value.getString("Course"));
+                department_p.setText(value.getString("Department"));
+                shift_p.setText(value.getString("Shift"));
+                year_of_adm_p.setText(value.getString("Year_of_adm"));
             }
         });
 

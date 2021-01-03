@@ -20,7 +20,7 @@ import soup.neumorphism.NeumorphButton;
 
 public class edit_profile extends AppCompatActivity {
 
-    EditText name_et,email_et,phone_et;
+    EditText name_et,email_et,phone_et,department_et,year_of_adm_et;
     FirebaseFirestore fstore;
     FirebaseAuth fAuth;
     String userID;
@@ -31,8 +31,9 @@ public class edit_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit__profile);
 
-        Spinner s = findViewById(R.id.Gender_spinner);
-        Spinner s1 = findViewById(R.id.Shift_spinner);
+        Spinner s = findViewById(R.id.Gender_spinner_edit_profile);
+        Spinner s1 = findViewById(R.id.Shift_spinner_edit_profile);
+        Spinner s2 = findViewById(R.id.Course_spinner_edit_profile);
 
 
         ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.GENDER, android.R.layout.simple_spinner_item);
@@ -46,10 +47,18 @@ public class edit_profile extends AppCompatActivity {
 
         s1.setAdapter(adapter1);
 
+        ArrayAdapter<CharSequence> adapter2 =ArrayAdapter.createFromResource(this,R.array.COURSE, android.R.layout.simple_spinner_dropdown_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        s2.setAdapter(adapter2);
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         name_et=findViewById(R.id.name_id_edit_profile);
         email_et=findViewById(R.id.email_id_edit_profile);
         phone_et=findViewById(R.id.phone_num_id_edit_profile);
+        department_et=findViewById(R.id.Department_edit_profile);
+        phone_et=findViewById(R.id.Year_of_adm_edit_profile);
+
         fstore=FirebaseFirestore.getInstance();
         fAuth=FirebaseAuth.getInstance();
         userID=fAuth.getCurrentUser().getUid();
@@ -69,8 +78,26 @@ public class edit_profile extends AppCompatActivity {
                 if (!email_et.getText().toString().equals("")){
                     documentReference.update("Email",email_et.getText().toString());
                 }
+                if (!year_of_adm_et.getText().toString().equals("")){
+                    documentReference.update("Year_of_adm",year_of_adm_et.getText().toString());
+                }
                 if (!phone_et.getText().toString().equals("")){
                     documentReference.update("Phone",phone_et.getText().toString());
+                }
+                if (!department_et.getText().toString().equals("")){
+                    documentReference.update("Department",department_et.getText().toString());
+                }
+                if (!year_of_adm_et.getText().toString().equals("")){
+                    documentReference.update("Phone",phone_et.getText().toString());
+                }
+                if (!s.getSelectedItem().toString().equals("")){
+                    documentReference.update("Gender",s.getSelectedItem().toString());
+                }
+                if (!s1.getSelectedItem().toString().equals("")){
+                    documentReference.update("Shift",s1.getSelectedItem().toString());
+                }
+                if (!s2.getSelectedItem().toString().equals("")){
+                    documentReference.update("Course",s2.getSelectedItem().toString());
                 }
                 Toast.makeText(edit_profile.this,"Profile Updated Successfully",Toast.LENGTH_SHORT).show();
 

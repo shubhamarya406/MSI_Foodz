@@ -10,10 +10,12 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,7 +36,7 @@ import java.util.Objects;
 public class Sign_up extends AppCompatActivity {
     private static final String TAG = "TAG";
     Button already_user, signup_btn;
-    EditText name_s, email_s, phone_s, password_s;
+    EditText name_s, email_s, phone_s, password_s,department_s,year_of_adm_s;
     FirebaseAuth fAuth;
     FirebaseFirestore db;
 
@@ -51,9 +53,12 @@ public class Sign_up extends AppCompatActivity {
         email_s = findViewById(R.id.email_signup);
         phone_s = findViewById(R.id.phone_number_signup);
         password_s = findViewById(R.id.password_signup);
+        department_s=findViewById(R.id.Department_sign_up);
+        year_of_adm_s=findViewById(R.id.Year);
         fAuth = FirebaseAuth.getInstance();
-        Spinner s = findViewById(R.id.Gender_spinner);
-        Spinner s1 = findViewById(R.id.Shift_spinner);
+        Spinner s = findViewById(R.id.Gender_spinner_signup);
+        Spinner s1 = findViewById(R.id.Shift_spinner_signup);
+        Spinner s2=findViewById(R.id.Course_spinner_signup);
 
 
         ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.GENDER, android.R.layout.simple_spinner_item);
@@ -66,6 +71,10 @@ public class Sign_up extends AppCompatActivity {
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         s1.setAdapter(adapter1);
+        ArrayAdapter<CharSequence> adapter2 =ArrayAdapter.createFromResource(this,R.array.COURSE, android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        s2.setAdapter(adapter2);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         if (fAuth.getCurrentUser() != null) {
@@ -83,6 +92,48 @@ public class Sign_up extends AppCompatActivity {
                 final String email = email_s.getText().toString().trim();
                 final String name = name_s.getText().toString();
                 final String phone = phone_s.getText().toString();
+                final String year_of_adm = year_of_adm_s.getText().toString();
+                final String department = department_s.getText().toString();
+                final String gender = s.getSelectedItem().toString();
+                final String course = s1.getSelectedItem().toString();
+                final String shift = s2.getSelectedItem().toString();
+
+//                s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                    @Override
+//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                        gender[0] =s.getItemAtPosition(position).toString();
+//                        Log.d(TAG, "gender subm   "+gender[0]);
+//                    }
+//
+//                    @Override
+//                    public void onNothingSelected(AdapterView<?> parent) {
+//
+//                    }
+//                });
+//                s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                    @Override
+//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                        shift[0] =s1.getItemAtPosition(position).toString();
+//                        Log.d(TAG, "gender subm   "+ shift[0]);
+//                    }
+//
+//                    @Override
+//                    public void onNothingSelected(AdapterView<?> parent) {
+//
+//                    }
+//                });
+//                s2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                    @Override
+//                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                        course[0] =s2.getItemAtPosition(position).toString();
+//                        Log.d(TAG, "gender subm   "+ course[0]);
+//                    }
+//
+//                    @Override
+//                    public void onNothingSelected(AdapterView<?> parent) {
+//
+//                    }
+//                });
                 String password = password_s.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
@@ -121,6 +172,11 @@ public class Sign_up extends AppCompatActivity {
                             user.put("Name", name);
                             user.put("Email", email);
                             user.put("Phone", phone);
+                            user.put("Department",department);
+                            user.put("Gender",gender);
+                            user.put("Shift",shift);
+                            user.put("Course",course);
+                            user.put("Year_of_adm",year_of_adm);
 
                             collectionReference.document(userID).set(user);
 
